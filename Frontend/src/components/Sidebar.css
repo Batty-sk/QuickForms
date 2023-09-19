@@ -1,0 +1,48 @@
+/* Sidebar.css */
+.sidebar {
+    width: 250px;
+    background-color: #343a40; /* Dark gray background */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .user-info {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .user-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .inbox,
+  .sign-out {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .inbox:hover,
+  .sign-out:hover {
+    background-color: #555; /* Darker gray on hover */
+  }
+  
+  .inbox-icon,
+  .sign-out-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+  

@@ -1,0 +1,28 @@
+/* Footer.css */
+.footer {
+   /* Dark gray background */
+    color: #ffffff; /* White text color */
+    padding: 20px 0;
+  }
+
+  
+  .social-icons {
+    text-align: right; /* Align social icons to the right */
+  }
+  .social-icon {
+    font-size: 24px;
+    margin-left: 10px;
+    color: #ffffff; /* White icon color */
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #ff8000; /* Hover color - adjust as needed */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  

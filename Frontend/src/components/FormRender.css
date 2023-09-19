@@ -1,0 +1,9 @@
+.form-render{
+    background-color: rgb(170, 250, 250);
+    padding:20px;
+}
+.required{
+    text-align: start;
+    color:red;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,45 @@
+/* Footer.css */
+
+  
+  .social-icon {
+    font-size: 24px;
+    margin-left: 10px;
+    color: #ffffff; /* White icon color */
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #ff8000; /* Hover color - adjust as needed */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .formbox{
+    background-color:rgb(235, 244, 246);
+  }
+  .question{
+    border-bottom: 4px solid rgb(114, 183, 203);
+  }
+  .form-check-label{
+    background-color: rgb(0, 255, 221);
+  }
+  .dropdown-options{
+    padding:10px;
+  }
+  .dropdown-options option:hover{
+    background-color: greenyellow;
+  }
+  .bi-image{
+    font-size: 1.8rem;
+    color:rgb(5, 39, 66);
+  }
+ 
+.clickfalse{
+  background-color: deepskyblue;
+}
+.clicktrue{
+  background-color: #103254;
+  color:white;
+}

@@ -1,0 +1,36 @@
+/* Signup.css */
+.signup-container {
+    background-color: #f0f0f0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+  }
+  
+  .signup-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    padding:20px;
+
+  }
+  
+  .signup-title {
+    color: #333333;
+  }
+  
+  .signup-input {
+    background-color: #f2f2f2;
+  }
+  
+  .signup-button {
+    background-color: #1976d2; /* Green button */
+  }
+  
+  .signup-message {
+    color: #dc3545;
+  }
+  
