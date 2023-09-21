@@ -1,6 +1,7 @@
 import { MdAdd } from 'react-icons/md';
 import Sidebar from './Sidebar';
 import {Link} from 'react-router-dom'
+import inbox from'../inbox.png' 
 import "./Home.css"
 function Home() {       
   return (
@@ -9,9 +10,13 @@ function Home() {
         <div className="col-12 text-center ">
           <h1 id='main-heading'><span>Q</span>uick Forms</h1>
         </div>
-        <div className="col-12 " id='home'>
+
+        <div className="col-12 text-center">
+            <Link to='/form-responses'> <img src={inbox} alt="" /></Link>
+        </div>
+        <div className="col-12 mb-3 " id='home'>
               <div className="row h-100 align-items-center justify-content-around">
-                <div className="col-md-5 text-center mono mt-5">
+                <div className="col-md-5 text-center  mono mt-5">
                   <h2><span>Create </span> Form</h2>
                   <div className="createform">
                   <Link to='/createform'>  <i class="bi bi-plus-circle-dotted" > </i></Link>

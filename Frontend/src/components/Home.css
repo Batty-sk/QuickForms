@@ -1,31 +1,61 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Edu+SA+Beginner:wght@500&family=Ubuntu:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 h1{
-   font-family: monospace;
+    font-family: 'Bangers', cursive;
    font-weight: bold;
+   letter-spacing: 5px;
     font-size: 3.7rem;
+    color: rgb(79, 71, 104);
+    background-color: #d8e6ec;
+
+}
+#main-heading{
+    font-family: 'Bangers', cursive;
+    letter-spacing: 10px;
+        color:rgb(9, 39, 60);
 }
 #main-heading span{
-    font-size: 5rem;
-    color:rgb(194, 204, 7);
+    font-size: 6rem;
+    color:rgb(252, 71, 129);
+    
 }
-
+#main-heading {
+    padding:10px;
+    background-color: 
+    #E4D4C8;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius:50%;
+}
 #home{
-    height: 90vh;
+    background-color: rgb(232, 236, 232);
+    border-radius: 30%;
+}
+body{
+    background-color: rgb(232, 236, 232);
+
 }
 #home span{
     font-size: 3rem;
     font-weight: bold;
-    background-color: rgb(210, 223, 123);
+    background-color:     #c8d6e4;
+
     padding:10px;
-    color:rgb(24, 24, 91);
+    color:rgb(0, 0, 0);
     border-radius: 15px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 5px;
+}
+#home h2{
+    font-weight:bolder;
 }
 .createform{
-    box-shadow: 0px 0px 5px rgb(123, 177, 199);
+    box-shadow: 0px 0px 5px rgb(46, 46, 46);
+    background-color: rgba(245, 245, 245, 0.795);
 }
 .showform{
-    box-shadow: 0px 0px 5px rgb(123, 177, 199);
+    box-shadow: 0px 0px 5px rgb(46, 46, 46);
+    background-color: rgba(245, 245, 245, 0.795);
 
 }
 .bi-file-text{
@@ -42,8 +72,4 @@ h1{
 .bi-file-text:hover{
     color:rgb(170, 148, 18);
 
-}
-.main-heading{
-}
-.createform:hover{
 }

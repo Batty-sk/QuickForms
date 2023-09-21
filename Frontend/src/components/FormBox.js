@@ -3,9 +3,10 @@ import './FormBox.css'
 import Draggable from 'react-draggable';
 import { useDrag } from 'react-dnd';
 
-const FormBox = ({setBox,index,data}) => {
+const FormBox = ({setBox,index,data,deletebox}) => {
                 
-    const[Question,setQuestion]=useState('Question')
+  console.log('data coming ',data)
+    const[Question,setQuestion]=useState(data.Question||'Question')
     const [imageURL, setImageURL] = useState(data.Image?data.Image:'');
     const [selectedOption, setSelectedOption] = useState(null); // State to track the selected option
     const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -174,7 +175,6 @@ const FormBox = ({setBox,index,data}) => {
         // Function to close dropdown when clicking outside
         const handleClickOutside = (event) => {
           if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-
             console.log('clicked outside')
             setDropdownVisible(false);
           }
@@ -190,10 +190,17 @@ const FormBox = ({setBox,index,data}) => {
     },[]);
   
     useEffect(()=>{
+      console.log('calling parent setbox')
         handleOnBlur()
     },[textbox,checkbox,radiobtn,date,imageURL,required,Question])
     
-  return (
+    const handleTrash=()=>
+    {
+      deletebox(index)
+    } 
+
+
+ return (
     <div className="row formbox mono" onBlur={handleOnBlur}  style={{ border: '1px solid black', padding: '10px', margin: '10px' }} >
       <div className="col-12">
         <div className="row">
@@ -205,14 +212,15 @@ const FormBox = ({setBox,index,data}) => {
             </div>
           </div>
           <div className="col-2 text-center ">
-          <label className="bi bi-image" style={{ cursor: 'pointer' }}>
-              <input
-                type="file"
-                style={{ display: 'none' }}
-                accept="image/*"
-                onChange={handleImageUpload}
-              />
-            </label>
+           {/*  <label className="bi bi-image" style={{ cursor: 'pointer' }}>
+                <input
+                  type="file"
+                  style={{ display: 'none' }}
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                />
+              </label> */}
+              <span className="bi bi-trash" onClick={handleTrash}></span>
             </div>
         </div>
       </div>

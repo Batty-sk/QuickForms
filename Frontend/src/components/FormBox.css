@@ -7,7 +7,13 @@
     color: #ffffff; /* White icon color */
     transition: color 0.3s ease;
   }
-  
+  .bi-trash{
+    font-size: 2rem;
+
+  }
+  .bi-trash:hover{
+    cursor: pointer;
+  }
   .social-icon:hover {
     color: #ff8000; /* Hover color - adjust as needed */
   }
@@ -27,9 +33,14 @@
   }
   .dropdown-options{
     padding:10px;
+    
+  }
+  .dropdown-options option{
+    border-bottom: 1px solid black;
   }
   .dropdown-options option:hover{
     background-color: greenyellow;
+    cursor: pointer;
   }
   .bi-image{
     font-size: 1.8rem;

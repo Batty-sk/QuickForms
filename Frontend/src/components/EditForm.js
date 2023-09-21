@@ -75,10 +75,10 @@ function EditForm() {
   <div className="row">
     <div className="col-12 text-end mt-3 mb-3">
       <button className="btn bg-success me-2 text-white" onClick={handleSubmit}><i class="bi bi-cloud-plus-fill"></i></button>
-      <button className="btn btn-danger mono">Reset</button>
-    </div>
+    </div>  
   </div>
   </div>
+  <div className='text-center mono bg-white'><h3 className='text-success'>{message}</h3></div>
 </div>
 
   )

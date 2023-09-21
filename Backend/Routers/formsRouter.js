@@ -191,29 +191,64 @@ Frouter.post('/createform', async (req, res) => {
         User.forms.push(savedForm._id)
         await User.save()
         console.log('form id created',savedForm._id)
-        res.status(200).json({ message: 'Form created successfully.' });
+        res.status(200).json({ message: 'Form created successfully.',data:savedForm._id });
     } catch (error) {
         console.error('Error creating form:', error);           
         res.status(500).json({ error: 'An error occurred while creating the form.' });
     }
 });
 
-Frouter.delete('/deleteform:id',async (req,res)=>{
+Frouter.delete('/deleteform',async (req,res)=>{
     const formIdToDelete = req.query['id']
     const userId = req.user._id; 
-
+    const User=req.user
+    console.log('coming in the delete form',formIdToDelete)
     try {
         // Delete the form reference from the user's forms 
-        await User.findByIdAndUpdate(userId, { $pull: { forms: formIdToDelete } });
+         await User.updateOne({ _id: User._id }, { $pull: { forms: formIdToDelete } });
+
 
         // Delete the form document from the forms collection
         await form.findByIdAndDelete(formIdToDelete);
 
         res.status(200).send({ 'form': formIdToDelete });
     } catch (error) {
+        console.log(error)
         res.status(500).send('Internal server error');
     }})
 
+    Frouter.get('/getresponses', async (req, res) => {
+        const User = req.user;
+        console.log('in the getresponses', User);
+    
+        try {
+            if (User.response.length) {
+                console.log('user.response.len');
+                const Data = [];
+                
+                for (const value of User.response) {
+                    const form_ = await form.findById(value.form);
+                    console.log('form ', form_);
+                    if (form_) {
+                        Data.push({
+                            user: value.user,
+                            form: { id: value.form, title: form_.formData[0].title },
+                          
+
+                        });
+                    }
+                }
+    
+                console.log('data ', Data);
+                return res.status(200).send({ responses: Data });
+            }
+    
+            return res.status(200).send({ responses: [] });
+        } catch (error) {
+            res.status(500).send({ error: error });
+        }
+    });
+    
 Frouter.put('/updateform',async(req,res)=>{
     try {
         const formId = req.query['id'];

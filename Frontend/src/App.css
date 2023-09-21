@@ -5,12 +5,26 @@
 .mono{
     font-family: monospace;
 }
+
 #my-forms{
     background-color: rgb(243, 243, 237);
-    height: 80vh;
+   
     padding: 20px;
 }
 .my-form{
     cursor: pointer;
+}
+
+.bi-journal-text{
+    font-size: 10rem;
+    color:black;
+    padding:20px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+.under-form{
     
+}
+.link-h3{
+    color:blue;
 }

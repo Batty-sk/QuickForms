@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import FormBox from './FormBox'
+import {useNavigate } from 'react-router-dom'
 import "./CreateForm.css"
 
 function CreateForm() {
@@ -8,6 +9,7 @@ function CreateForm() {
     const[title,setTitle]=useState('Untitle Form')
     const [message,setMessage]=useState(null)
     const [status,setStatus]=useState(null)
+    const navigate=useNavigate();
 
     useEffect(()=>{
       try{
@@ -36,6 +38,14 @@ function CreateForm() {
     const handleAddMore=()=>{ 
         setFormData([...formdata,{}])
     }
+
+    const handleDelete=(indexx)=>{
+      console.log('index to delete',indexx)
+      const updatedData = formdata.filter((_, index) => index !== indexx);
+      console.log('updated data',updatedData)
+      setFormData(updatedData)
+
+    }
     const handleSubmit=()=>{
 
         console.log('final form data',formdata)
@@ -50,8 +60,9 @@ function CreateForm() {
           }).then(res=>{
            
             console.log('successfully created!')
-    
+          
             setStatus('created Successfully')
+            navigate(`/created-form/${res.data}`)
           })
           .catch(error=>{
             console.log('error while creating the form',error)
@@ -71,7 +82,7 @@ function CreateForm() {
                       {title || 'Untitle Form'} 
                   </div>
           {formdata.map((value,index)=>{
-              return  <FormBox key={index} setBox={setBox}  index={index} data={false}/>
+              return  <FormBox key={index} setBox={setBox}  index={index} data={value} deletebox={handleDelete}/>
           })}   
           </div>
           <div className="col-8 text-center mt-3" id='add-more'>
@@ -80,11 +91,10 @@ function CreateForm() {
       <div className="row">
         <div className="col-12 text-end mt-3 mb-3">
           <button className="btn bg-success me-2 text-white" onClick={handleSubmit}><i class="bi bi-cloud-plus-fill"></i></button>
-          <button className="btn btn-danger mono">Reset</button>
         </div>
       </div>
-      <div className="col-12">
-        {status}
+      <div className="col-12 text-center bg-white mono">
+         {status}
       </div>
       </div>
     </div>

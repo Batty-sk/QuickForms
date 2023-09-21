@@ -10,9 +10,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import Footer from './components/Footer'
 import './App.css'
+import TheResponses from './components/TheResponses'
 import ShowMyForms from './components/ShowMyForms'
 import ThankYou from './ThankYou'
-
+import ShowFormLink from './components/ShowFormLink'
 
 function App() {
 
@@ -35,8 +36,11 @@ function App() {
 
             <Route path='/form/:id' Component={ShowForm}></Route>
 
+             <Route path='/created-form/:id' Component={ShowFormLink}></Route>
 
             <Route path='/response/:id/:form' Component={ResponseForm}></Route>
+
+            <Route path='/form-responses' Component={TheResponses}></Route> 
 
             <Route path='/thank-you' Component={ThankYou}></Route>
 

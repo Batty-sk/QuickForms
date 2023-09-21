@@ -1,0 +1,17 @@
+.title{
+    color:rgb(134, 234, 176)
+}
+.link{
+    text-decoration: none;
+}
+.respo-container{
+    background-color: black;
+    margin-bottom: 10px;
+    transition: background-color 500ms;
+}
+.respo-container:hover{
+    background-color: rgb(35, 30, 30);
+}
+.respo-val{
+    color:rgb(159, 230, 253)
+}
